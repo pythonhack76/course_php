@@ -8,6 +8,9 @@
  * @author:    Luca Rulvoni 
  */
 
+/*----------------------------------------------------------------
+        creiamo la classe Auto la principale del programma OOP
+------------------------------------------------------------------*/
 
 class Auto
 {
@@ -15,6 +18,10 @@ class Auto
     protected $color = '';
     protected $upholstery;
     protected $brand = '';
+
+    /*----------------------------------------------------------------
+        definiamo il constructor principale
+------------------------------------------------------------------*/
 
     public function __construct($extColor = null, $intColor = null, $brand = null)
     {
@@ -55,6 +62,10 @@ class Auto
     }
 }
 
+/*----------------------------------------------------------------
+        creiamo una nuova classe Truck che eredita da Auto 
+------------------------------------------------------------------*/
+
 class Truck extends Auto
 { //
     protected $weight;
@@ -64,10 +75,19 @@ class Truck extends Auto
         parent::__construct($extColor, $intColor, $brand);
         $this->weight = $weight;
     }
+    //modifichiamo le impostazioni della funzione 
+    public function getColor()
+    {
+        return 'Il colore del camion è: ' . strtoupper(parent::getColor());
+    }
 }
 
+/*----------------------------------------------------------------
+        stampiamo le classi che abbiamo sviluppato
+------------------------------------------------------------------*/
 
-$ordTruck = new Truck('yellow', 'sweet Pastel', 'Fiat');
+$fordTruck = new Truck('brown', 'sweet Pastel', 'Fiat', 200);
 //$ordTruck->setColor("green");
-echo $ordTruck->getColor();
-echo $ordTruck->getBrand();
+$fordTruck->setColor('Blue');
+echo $fordTruck->getColor();
+echo $fordTruck->getBrand();
