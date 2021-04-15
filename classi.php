@@ -80,6 +80,20 @@ class Truck extends Auto
     {
         return 'Il colore del camion è: ' . strtoupper(parent::getColor());
     }
+
+    /*--------------------------------------------------------------------
+    aggiungo funzioni per metodi riservati alla nuova classe Truck  
+---------------------------------------------------------------------*/
+    public function getWeight()
+    {
+
+        return $this->weight;
+    }
+
+    public function setWeight($w) //possiamo anche utilizzare il nome di variabile $w ad esempio 
+    {
+        return $this->weight = "<b>" . ' ' . $w . "</b>";
+    }
 }
 
 /*----------------------------------------------------------------
@@ -91,3 +105,5 @@ $fordTruck = new Truck('brown', 'sweet Pastel', 'Fiat', 200);
 $fordTruck->setColor('Blue');
 echo $fordTruck->getColor();
 echo $fordTruck->getBrand();
+$fordTruck->setWeight(400);
+echo $fordTruck->getWeight();
