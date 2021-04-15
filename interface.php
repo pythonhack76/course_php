@@ -42,6 +42,8 @@
         public $iStopped = true;
         protected $gear = 0;
         const maxGear = 5;
+        //protected $fuel = 0;
+        //const maxFuel = 100,
         protected $isParked = false;
 
         public function stop()
