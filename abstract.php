@@ -7,9 +7,6 @@
  * 
  **/
 
-
-
-
 abstract class  Car
 {
     protected $speed = 0;
